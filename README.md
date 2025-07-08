@@ -117,3 +117,14 @@ Consider adding:
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+### github actions - terraform workflow
+
+
+### usage
+```
+export TF_VAR_cf_user_password=your_password
+terraform init
+terraform plan --out=plan.out
+terraform apply "plan.out"
+```

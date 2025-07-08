@@ -3,15 +3,6 @@ terraform {
   backend "local" {
     path = "./terraform.tfstate"
   }
-  #   backend "remote" {
-  #    cloud {
-  #        # The name of your Terraform Cloud organization.
-  #        organization = "jl-sandbox"
-  #
-  #        workspaces {
-  #          name = "jl-sandbox-workflow"
-  #        }
-  #   }
 }
 
 resource "null_resource" "example" {
@@ -19,12 +10,6 @@ resource "null_resource" "example" {
     value = "A example resource that does nothing!"
   }
 }
-
-#variable "bucket_name" {}
-#module "aws" {
-#    source = "./providers/aws"
-#    bucket_name = "${var.bucket_name}"
-# }
 
 variable "cf_user_password" {}
 module "cf" {
