@@ -57,6 +57,8 @@ jobs:
     name: 'Terraform'
     runs-on: self-hosted
     environment: homelab
+    env:
+      TF_VAR_cf_user_password: ${{ secrets.CF_USER_PASSWORD }}
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
