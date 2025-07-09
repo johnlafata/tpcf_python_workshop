@@ -13,7 +13,7 @@ books = [
 
 @app.get("/")
 def read_root():
-    return {"message": "Welcome to the new test deployment of the Books API"}
+    return {"message": "Welcome to the best test deployment of the Books API"}
 
 @app.get("/books", response_model=List[Book])
 def get_books():
