@@ -1,6 +1,5 @@
 venv
 providers/cf/repo/*
-providers/cf/repo/*.*
 providers/cf/repo.zip
 .terraform
 .terraform.lock.hcl
