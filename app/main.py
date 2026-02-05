@@ -25,3 +25,23 @@ def get_book(book_id: int):
         if book.id == book_id:
             return book
     raise HTTPException(status_code=404, detail="Book not found")
+
+@app.post("/books", response_model=Book, status_code=201)
+def create_book(book: Book):
+    """
+    Create a new book and add it to the collection.
+    
+    - **id**: Unique identifier for the book
+    - **title**: Book title
+    - **author**: Book author
+    - **description**: Optional book description
+    - **price**: Book price
+    - **in_stock**: Whether the book is in stock (defaults to True)
+    """
+    # Check if book with same ID already exists
+    for existing_book in books:
+        if existing_book.id == book.id:
+            raise HTTPException(status_code=400, detail="Book with this ID already exists")
+    
+    books.append(book)
+    return book
